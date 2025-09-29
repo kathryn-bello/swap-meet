@@ -3,23 +3,31 @@
 Talk through each section with your partner. Add notes on what you discussed and agreed upon in each section. At the bottom, type your names to sign off on your agreement.
 
 ## Accessibility Needs
-*What does each team member need access to in order to succeed and show up the best they can?*
+
+Mengqio Han: No restrictions.
+Kathryn Bello: We are in different time zones, which may complicate coworking sessions. To address this, we will use Slack for ongoing communication and establish deadlines that accommodate both schedules.
 
 ## Collaboration vs. Individual Work Expectations
-*Clarify your collaboration expectations - does your group want to write code together all of the time? Or divide work to do independently, then come together to share accomplishments? What tools and technologies can help your collaboration?*
+
+We agree to complete most assigned sections or waves independently. However, we will collaborate during our scheduled coworking sessions, where joint problem-solving and review will take place.
 
 ## Learning Style
-*How does each team member learn best in project settings?*
+
+Mengqio Han: Prefers tackling challenges head-on and learning from failures along the way.
+Kathryn Bello: Prefers reviewing material thoroughly and building understanding before applying it.
 
 ## Preferred Feedback Style
-*How does each team member best receive feedback?*
+
+We both value direct, straightforward feedback. We are open to learning from each other’s perspectives and will aim to give constructive, actionable suggestions rather than vague comments.
 
 ## One Team Communication Skill to Improve
-*What is a teamwork-related skill you want to work on?*
+
+Mengqio Han: Improve code readability to ensure Kathryn can easily understand and review contributions.
+Kathryn Bello: Use the Co-Pilot Live feature to strengthen pair programming skills.
 
 ## Optional: Other agreements
-*Other co-working agreements that were not captured in the above sections.*
+
 
 ## Signatures
-______________ _______________
-Date: _________
+Kathryn Bello _______________
+Date: 09-29-2025
