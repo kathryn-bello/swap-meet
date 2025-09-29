@@ -29,5 +29,5 @@ Kathryn Bello: Use the Co-Pilot Live feature to strengthen pair programming skil
 
 
 ## Signatures
-Kathryn Bello _______________
+Kathryn Bello Mengqiao Han
 Date: 09-29-2025
