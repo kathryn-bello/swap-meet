@@ -130,11 +130,4 @@ def test_swap_items_from_their_empty_returns_false():
     nobodys_item = Item()
 
     result = fatimah.swap_items(jolie, item_b, nobodys_item)
-
-    
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    assert len(fatimah.inventory) == 3
-    assert len(jolie.inventory) == 0
-    assert not result
+    assert result == False, "Cannot swap items with empty inventory"

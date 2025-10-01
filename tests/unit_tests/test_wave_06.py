@@ -34,9 +34,6 @@ def test_get_no_matching_items_by_category():
     items = vendor.get_by_category("Electronics")
 
     assert items == []
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
 
 #@pytest.mark.skip
 def test_best_by_category():
@@ -116,14 +113,6 @@ def test_swap_best_by_category():
     assert tai.inventory == [item_a, item_b, item_f]
     assert jesse.inventory == [item_d, item_e, item_c]
 
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That the results is truthy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories, including the items which were swapped from one vendor to the other
-
 #@pytest.mark.skip
 def test_swap_best_by_category_reordered():
     # Arrange
@@ -153,14 +142,6 @@ def test_swap_best_by_category_reordered():
     assert len(jesse.inventory) == 3
     assert tai.inventory == [item_b, item_a, item_f]
     assert jesse.inventory == [item_e, item_d, item_c]
-
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That result is truthy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories, and that the items that were swapped are not there
 
 #@pytest.mark.skip
 def test_swap_best_by_category_no_inventory_is_false():
@@ -244,14 +225,6 @@ def test_swap_best_by_category_no_match_is_false():
     assert tai.inventory == [item_a, item_b, item_c]
     assert jesse.inventory == [item_d, item_e, item_f]
 
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That result is falsy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories
-
 #@pytest.mark.skip
 def test_swap_best_by_category_no_other_match_is_false():
     # Arrange
@@ -283,10 +256,99 @@ def test_swap_best_by_category_no_other_match_is_false():
     assert tai.inventory == [item_c, item_b, item_a]
     assert jesse.inventory == [item_f, item_e, item_d]
 
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That result is falsy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories
+#@pytest.mark.skip
+def test_get_newest_item():
+    item_a = Clothing(age=13)
+    item_b = Electronics(age=2)
+    item_c = Clothing(age=34)
+    item_d = Decor(age=10)
+    item_e = Item(age=46)
+    test_inventory_1 = Vendor(
+        inventory=[item_a, item_b, item_c, item_d, item_e]
+    )
+
+    newest_item = test_inventory_1.get_newest_item()
+    
+    assert newest_item == item_b
+
+#@pytest.mark.skip
+def test_swap_newest_item():
+    # Arrange
+    # me
+    dress = Clothing(age=3)
+    ipod = Electronics(age=10)
+    coffee_table = Decor(age=4)
+    video_card = Electronics(age=2)
+    first_vendor = Vendor(
+        inventory=[dress, ipod, coffee_table, video_card]
+    )
+
+    # them
+    jacket = Clothing(age=5)
+    desk = Decor(age=2)
+    lamp = Decor(age=6)
+    second_vendor = Vendor(
+        inventory=[jacket, desk, lamp]
+    )
+
+    # Act
+    result = first_vendor.swap_by_newest(second_vendor)
+
+    assert result == True
+    assert len(first_vendor.inventory) == 4
+    assert len(second_vendor.inventory) == 3
+    assert first_vendor.inventory == [dress, ipod, coffee_table, desk]
+    assert second_vendor.inventory == [jacket, lamp, video_card]
+
+#@pytest.mark.skip
+def test_swap_newest_item_empty_vendor():
+    # Arrange
+    # me
+    dress = Clothing(age=3)
+    ipod = Electronics(age=10)
+    coffee_table = Decor(age=4)
+    video_card = Electronics(age=2)
+    first_vendor = Vendor(
+        inventory=[dress, ipod, coffee_table, video_card]
+    )
+
+    # them
+    second_vendor = Vendor()
+
+    # Act
+    result = first_vendor.swap_by_newest(second_vendor)
+
+    assert result == False
+    assert len(first_vendor.inventory) == 4
+    assert len(second_vendor.inventory) == 0
+    assert first_vendor.inventory == [dress, ipod, coffee_table, video_card]
+    assert second_vendor.inventory == []
+
+#@pytest.mark.skip
+def test_swap_newest_item_duplicate_age():
+    # Arrange
+    # me
+    dress = Clothing(age=3)
+    ipod = Electronics(age=3)
+    coffee_table = Decor(age=4)
+    video_card = Electronics(age=10)
+    first_vendor = Vendor(
+        inventory=[dress, ipod, coffee_table, video_card]
+    )
+
+    # them
+    jacket = Clothing(age=5)
+    desk = Decor(age=2)
+    lamp = Decor(age=2)
+    second_vendor = Vendor(
+        inventory=[jacket, desk, lamp]
+    )
+
+    # Act
+    result = first_vendor.swap_by_newest(second_vendor)
+
+    assert result == True
+    assert len(first_vendor.inventory) == 4
+    assert len(second_vendor.inventory) == 3
+    assert first_vendor.inventory == [ipod, coffee_table, video_card, desk]
+    assert second_vendor.inventory == [jacket, lamp, dress]
