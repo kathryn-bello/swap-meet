@@ -6,9 +6,8 @@ class Electronics(Item):
         self.type= type
         self.condition = condition
         self.age = age
-
-    def get_category(self):
-        return "Electronics"
     
     def __str__(self):
-        return f"An object of type Electronics with id {self.id}. This is a {self.type} device."
+        string = super().__str__()
+        string += f" This is a {self.type} device."
+        return string

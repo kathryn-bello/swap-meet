@@ -9,15 +9,13 @@ class Item:
         self.condition = condition
         self.age = age
     
-    # returns a string holding the name of the class
     def get_category(self):
-        return "Item"
+        return self.__class__.__name__
     
-    # overriding the str() representation of an object
     def __str__(self):
-        return f"An object of type Item with id {self.id}."
+        category = self.get_category()
+        return "An object of type "+category+f" with id {self.id}."
     
-    # returns a condition description based on value range from 0 to 5
     def condition_description(self):
         match self.condition:
             case 0:
