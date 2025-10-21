@@ -219,7 +219,7 @@ def test_swap_best_by_category_no_match_is_false():
         their_priority="Clothing"
     )
 
-    assert result == False
+    assert result is False
     assert len(tai.inventory) == 3
     assert len(jesse.inventory) == 3
     assert tai.inventory == [item_a, item_b, item_c]
@@ -250,7 +250,7 @@ def test_swap_best_by_category_no_other_match_is_false():
     )
 
     
-    assert result == False
+    assert result is False
     assert len(tai.inventory) == 3
     assert len(jesse.inventory) == 3
     assert tai.inventory == [item_c, item_b, item_a]
@@ -294,7 +294,7 @@ def test_swap_newest_item():
     # Act
     result = first_vendor.swap_by_newest(second_vendor)
 
-    assert result == True
+    assert result is True
     assert len(first_vendor.inventory) == 4
     assert len(second_vendor.inventory) == 3
     assert first_vendor.inventory == [dress, ipod, coffee_table, desk]
@@ -318,7 +318,7 @@ def test_swap_newest_item_empty_vendor():
     # Act
     result = first_vendor.swap_by_newest(second_vendor)
 
-    assert result == False
+    assert result is False
     assert len(first_vendor.inventory) == 4
     assert len(second_vendor.inventory) == 0
     assert first_vendor.inventory == [dress, ipod, coffee_table, video_card]
@@ -347,7 +347,7 @@ def test_swap_newest_item_duplicate_age():
     # Act
     result = first_vendor.swap_by_newest(second_vendor)
 
-    assert result == True
+    assert result is True
     assert len(first_vendor.inventory) == 4
     assert len(second_vendor.inventory) == 3
     assert first_vendor.inventory == [ipod, coffee_table, video_card, desk]
